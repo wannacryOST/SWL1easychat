@@ -1,0 +1,32 @@
+#header {
+    width: 100%;
+    background-color: #a3a3a333;
+    padding: 10px;
+    position: fixed;
+    display: inline;
+  }
+  
+  img {
+    width: 20%;
+    display: inline;
+    float: left;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+    display: inline;
+    float: right;  
+  }
+  
+  li {
+    display: block;
+    color: black;
+    text-align: right;
+    padding: 16px;
+    text-decoration: none;
+    width: 90%;
+    
+  }
