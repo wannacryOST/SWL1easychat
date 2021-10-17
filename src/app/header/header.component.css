@@ -1,27 +1,32 @@
 #header {
     width: 100%;
-    background-color: #a3a3a333;
+    border-bottom: 1px solid black;
     padding: 10px;
+    height: 200px;
     position: fixed;
-    display: inline;
   }
+
+#headerdiv {
+  height: 200px;
+  width: 100%;
+}
   
-  img {
-    width: 20%;
-    display: inline;
+  
+img {
     float: left;
   }
   
-  ul {
+/* CSS für Menu
+
+ul {
     list-style-type: none;
     margin: 10px;
     padding: 10px;
     overflow: hidden;
-    display: inline;
     float: right;  
   }
   
-  li {
+li {
     display: block;
     color: black;
     text-align: right;
@@ -30,3 +35,4 @@
     width: 90%;
     
   }
+*/
