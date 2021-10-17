@@ -1,38 +1,20 @@
 #header {
-    width: 100%;
-    border-bottom: 1px solid black;
-    padding: 10px;
-    height: 200px;
-    position: fixed;
-  }
+  width: 100%;
+  border-bottom: 1px solid black;
+  background-color: white;
+  padding: 10px;
+  height: 100px;
+  position: fixed;
+}
 
 #headerdiv {
-  height: 200px;
+  height: 100px;
   width: 100%;
 }
   
   
-img {
-    float: left;
-  }
-  
-/* CSS für Menu
+#ostlogo {
+  float: right;
+  height: 80px;
+}
 
-ul {
-    list-style-type: none;
-    margin: 10px;
-    padding: 10px;
-    overflow: hidden;
-    float: right;  
-  }
-  
-li {
-    display: block;
-    color: black;
-    text-align: right;
-    padding: 16px;
-    text-decoration: none;
-    width: 90%;
-    
-  }
-*/
