@@ -3,18 +3,11 @@
   border-bottom: 1px solid black;
   background-color: white;
   padding: 10px;
-  height: 100px;
-  position: fixed;
+  height: 120px;
 }
-
-#headerdiv {
-  height: 100px;
-  width: 100%;
-}
-  
   
 #ostlogo {
   float: right;
-  height: 80px;
+  width: 200px;
 }
 
