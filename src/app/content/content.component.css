@@ -1,3 +1,59 @@
-#content {
-    height: 360px;
+#font {
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+#grauerbereich {
+    background-color: #F2F2F2;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    margin: 20px;
+    padding-bottom: 20px;
+
+}
+
+#ausgabefeld {
+    padding: 5px 15px 5px 15px;
+    border: 0px;
+    color: black;
+    border-radius: 5px;
+}
+
+#divoutput {
+    margin: 100px 0 0 0;
+}
+
+#eingabefeld {
+    width: 70%;
+    min-height: 35px;
+    max-height: 35px;
+    padding: 5px 15px 5px 15px;
+    border: 0px;
+    background-color: #D72864;
+    color: white;
+    border-radius: 5px;    
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+
+#meinbutton {
+    margin-left: 20px;
+    width: 25%;
+    border-radius: 5px;
+    border: 0px;
+    padding: 5px 15px 5px 15px;
+    background-color: #8C195F;
+    color: white;
+
+}
+
