@@ -1,3 +1,15 @@
-<div id="content">
-    Dies ist der Content.
+<div id="font">
+  <div id="grauerbereich">
+
+    <div id="divoutput">
+      <p id="ausgabefeld" >{{ myText }}</p>
+    </div>
+
+    <div class="input-group">
+      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="myText" maxlength="99" id="eingabefeld" class="form-controll"></textarea>
+      <button type="button" id="meinbutton" (click)="clearText()" >Absenden</button>
+    </div>
+
   </div>
+</div>
+
