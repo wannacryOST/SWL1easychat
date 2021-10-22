@@ -1,12 +1,12 @@
 <div id="font">
   <div id="grauerbereich">
 
-    <div id="divoutput">
+    <div>
       <p id="ausgabefeld" >{{ myText }}</p>
     </div>
 
     <div class="input-group">
-      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="myText" maxlength="99" id="eingabefeld" class="form-controll"></textarea>
+      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="myText" maxlength="99" id="eingabefeld"></textarea>
       <button type="button" id="meinbutton" (click)="clearText()" >Absenden</button>
     </div>
 

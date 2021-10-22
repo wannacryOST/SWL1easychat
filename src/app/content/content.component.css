@@ -13,13 +13,10 @@
 
 #ausgabefeld {
     padding: 5px 15px 5px 15px;
+    margin-top: 100px;
     border: 0px;
     color: black;
     border-radius: 5px;
-}
-
-#divoutput {
-    margin: 100px 0 0 0;
 }
 
 #eingabefeld {
@@ -36,14 +33,6 @@
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
-  }
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: white;
-  }
-  
-::-ms-input-placeholder { /* Microsoft Edge */
-    color: white;
   }
 
 #meinbutton {
