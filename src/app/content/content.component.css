@@ -12,6 +12,7 @@
 }
 
 #ausgabefeld {
+    min-height: 90px;
     padding: 5px 15px 5px 15px;
     margin-top: 100px;
     border: 0px;
@@ -21,8 +22,8 @@
 
 #eingabefeld {
     width: 70%;
-    min-height: 35px;
-    max-height: 35px;
+    height: 35px;
+    resize: none;
     padding: 5px 15px 5px 15px;
     border: 0px;
     background-color: #D72864;
@@ -46,3 +47,6 @@
 
 }
 
+#meinbutton:disabled {
+    background-color: #ca73a9;
+}

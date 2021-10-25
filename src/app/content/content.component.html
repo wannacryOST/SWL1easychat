@@ -3,13 +3,13 @@
 
     <div>
       <p id="ausgabefeld" >{{ myText }}</p>
+      <textarea readonly id=""></textarea>
     </div>
 
     <div class="input-group">
-      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="myText" maxlength="99" id="eingabefeld"></textarea>
-      <button type="button" id="meinbutton" (click)="clearText()" >Absenden</button>
+      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="myText" maxlength="99" id="eingabefeld" (keyup.enter)=clearText()></textarea>
+      <button type="button" id="meinbutton" (click)="clearText()" [disabled]="!myText">Absenden</button>
     </div>
 
   </div>
 </div>
-
