@@ -1,14 +1,14 @@
-<div id="font">
+<div class="container" id="font">
   <div id="grauerbereich">
 
     <div>
-      <p id="ausgabefeld" >{{ myText }}</p>
+      <p id="ausgabefeld" >{{ chatMessage }}</p>
       <!-- <textarea readonly id=""></textarea> -->
     </div>
 
     <div class="input-group">
-      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="myText" maxlength="99" id="eingabefeld" (keyup.enter)=clearText()></textarea>
-      <button type="button" id="meinbutton" (click)="clearText()" [disabled]="!myText">Absenden</button>
+      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="chatMessage" maxlength="99" id="eingabefeld" (keyup.enter)="showMessage()"></textarea>
+      <button type="button" id="meinbutton" (click)="showMessage()" [disabled]="chatMessage.length == 0">Absenden</button>
     </div>
 
   </div>
