@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-chat-bar',
+  templateUrl: './chat-bar.component.html',
+  styleUrls: ['./chat-bar.component.css']
 })
-export class ContentComponent {
+export class ChatBarComponent {
 
   constructor() { }
 

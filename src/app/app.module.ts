@@ -6,13 +6,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { FormsModule } from '@angular/forms';
+import { ChatBarComponent } from './chat-bar/chat-bar.component';
+import { ChatHistoryComponent } from './chat-history/chat-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    ChatBarComponent,
+    ChatHistoryComponent
   ],
   imports: [
     BrowserModule,
