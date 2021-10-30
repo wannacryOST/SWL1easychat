@@ -1,0 +1,25 @@
+#grauerbereich {
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+}
+
+#messageList {
+    list-style-type: none;
+    padding: 20px;
+    background-color: #C4C4C440;
+    border-radius: 5px;
+    height: 200px;
+    overflow: auto;
+    
+}
+
+#messages {
+    background-color: #C4C4C4;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 20px 5px 20px;
+    margin: 12px 0px 12px 0px;
+}
+

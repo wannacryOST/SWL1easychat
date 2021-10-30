@@ -9,24 +9,12 @@ export class ChatBarComponent {
 
   constructor() { }
 
-  message:string = ''
+  message:string = '';
 
-  get chatMessage(): string {
-    return this.message;
+  @Output() messageEvent = new EventEmitter<string>();
+
+  public sendMessage() {
+    this.messageEvent.emit(this.message.trim());
+    this.message = ''
   }
-
-  @Output() 
-  chatMessageChange = new EventEmitter<string>();
-
-  @Input()
-  set chatMessage(value) {
-    this.message = value;
-    this.chatMessageChange.emit(this.message);
-  }
-
-  public showMessage(): void {
-    alert(this.chatMessage);
-    this.chatMessage = '';
-  }
-
 }

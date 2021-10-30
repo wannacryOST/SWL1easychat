@@ -7,8 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   private title: string = 'EasyChat';
-  public messageText: string = ''
-  public chatMsg(event: any): void{
-    console.log(<string>event.toUpperCase());
-  }
+
 }
