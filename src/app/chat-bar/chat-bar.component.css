@@ -2,13 +2,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#grauerbereich {
-    background-color: #F2F2F2;
-    padding: 5px 15px 5px 15px;
-    border-radius: 5px;
-    margin: 20px;
-    padding-bottom: 20px;
-
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
 }
 
 #ausgabefeld {
@@ -21,7 +18,7 @@
 }
 
 #eingabefeld {
-    width: 70%;
+    width: 75%;
     height: 35px;
     resize: none;
     padding: 5px 15px 5px 15px;
@@ -38,7 +35,8 @@
 
 #meinbutton {
     margin-left: 20px;
-    width: 25%;
+    width: 20%;
+
     border-radius: 5px;
     border: 0px;
     padding: 5px 15px 5px 15px;

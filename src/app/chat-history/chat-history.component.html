@@ -1,3 +1,15 @@
-<div id="container">
-    <textarea readonly id="history"></textarea>
+<div class="container" id=grauerbereich>
+
+<div>
+        <ul id="messageList">
+            <li id="messages" *ngFor="let message of messageArray">{{ message }}</li>
+        </ul>
+    
+    
+</div>
+
+<app-chat-bar (messageEvent)="receiveMessage($event)">
+    <!-- Dies ist die Chat-bar. In chat-bar.component.html bearbeiten -->
+  </app-chat-bar>
+
 </div>
