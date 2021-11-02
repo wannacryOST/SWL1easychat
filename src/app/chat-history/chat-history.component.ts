@@ -21,6 +21,7 @@ export class ChatHistoryComponent {
       this.messageArray.push(this.message)
       this.message = ''
     }
+    // document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight
   }
 
 }
