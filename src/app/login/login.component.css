@@ -1,0 +1,41 @@
+#welcomeText{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;  /*kann wieder gelöscht werden */
+}
+
+#font {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;  /*kann wieder gelöscht werden */
+}
+
+/*muss noch angepasst werden */
+.input-group {
+    border: 1px solid black;  /*kann wieder gelöscht werden */
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+#nicknameEingabe{
+    float: left;
+    width: 65%;
+    height: 35px;
+    resize: none;                   /*damit Benutzer das Feld in der Grösse nicht verändern kann */
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #D72864;    
+}
+
+::placeholder{
+    color: white;
+}
+
+#buttonBestätigen{
+    width: 30%;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #8C195F;
+    color: white;
+}
+
