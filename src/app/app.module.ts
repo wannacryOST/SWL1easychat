@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ChatBarComponent } from './chat-bar/chat-bar.component';
 import { ChatHistoryComponent } from './chat-history/chat-history.component';
 import { LoginComponent } from './login/login.component';
+import { PersonService } from './person.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoginComponent, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

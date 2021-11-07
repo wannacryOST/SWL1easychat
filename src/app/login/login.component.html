@@ -1,13 +1,6 @@
-<div id="welcomeText">
-    <p>Willkommen "nickname anzeigen? -->ersetzten durch dynamisches Feld"</p>
-</div>
-
 <div class="container-fluid" id="font">
    <div class="input-group">
-        <textarea type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe"></textarea>
+        <textarea type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup.enter)="sendNickname()"></textarea>
         <button type="button" id="buttonBestätigen" (click)="sendNickname()">Bestätigen</button>
     </div>
 </div>
-
-
-

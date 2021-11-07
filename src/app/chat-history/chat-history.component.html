@@ -1,11 +1,13 @@
 <div class="container" id=grauerbereich>
 
+
+
 <div>
-        <ul id="messageList">
-            <li id="messages" *ngFor="let message of messageArray">{{ message }}</li>
-        </ul>
-    
-    
+  <ul id="messageList">
+      <li id="messages" *ngFor="let message of messageArray">
+        <textarea type="text" readonly class="form-control" id="textareamessage"> {{ message.nickname }} {{  message.message }}</textarea>
+      </li>
+  </ul>
 </div>
 
 <app-chat-bar (messageEvent)="receiveMessage($event)">

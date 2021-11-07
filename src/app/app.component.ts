@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: string = 'EasyChat';
-
+  public messageText: string = '...';
 }
