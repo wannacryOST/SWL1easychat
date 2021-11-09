@@ -1,17 +1,9 @@
 <div class="container" id=grauerbereich>
-
-
-
-<div>
-  <ul id="messageList">
-      <li id="messages" *ngFor="let message of messageArray">
-        <textarea type="text" readonly class="form-control" id="textareamessage"> {{ message.nickname }} {{  message.message }}</textarea>
-      </li>
-  </ul>
-</div>
-
-<app-chat-bar (messageEvent)="receiveMessage($event)">
-  <!-- Dies ist die Chat-bar. In chat-bar.component.html bearbeiten -->
-</app-chat-bar>
-
+  <div>
+    <ul id="messageList" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <li id="messages" *ngFor="let message of chatHistory">
+          <div id="textareamessage" style="white-space: pre-line;"><span *ngIf="message.nickname" style="font-weight: bold;">{{ message.nickname }}</span>{{  message.message }}</div>
+        </li>
+    </ul>
+  </div>
 </div>

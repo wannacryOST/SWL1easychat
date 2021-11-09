@@ -8,31 +8,16 @@ import { PersonService } from '../person.service';
 })
 export class ChatHistoryComponent {
 
-  constructor(public pService: PersonService) { }
+  @Input() chatHistory!: any[];
 
-  message = "message string parent";
-  messageArray: any[] = [];
-  nicknamehistory:string = '';
-  
 
-  
+  constructor(public pService: PersonService) { } 
 
   ngOnInit() {
   }
 
-  receiveMessage($event : string) {
-    this.message = $event;
-    if (this.message) {
-      this.nicknamehistory = this.pService.nickname + ": ";
-      var myobj = { message:this.message, nickname:this.nicknamehistory }
-      this.messageArray.push(myobj)
-      this.message = ''
-    }
-
-
     // document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight
-  }
-
-
-
 }
+
+
+
