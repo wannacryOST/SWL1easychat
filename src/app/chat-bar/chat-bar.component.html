@@ -2,9 +2,8 @@
     
     
       <div class="input-group">
-        <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="message" maxlength="99" id="eingabefeld" (keyup.enter)="sendMessage()"></textarea>
+        <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="message" maxlength="999" id="eingabefeld" (keyup.enter)="sendMessage()"></textarea>
         <button type="button" id="meinbutton" (click)="sendMessage()" [disabled]="!message">Absenden</button>
       </div>
-  
-    
+
   </div>

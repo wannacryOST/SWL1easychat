@@ -7,33 +7,36 @@ import * as $ from "jquery";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   constructor(public pService: PersonService) { }
 
   //Deklaration Variable nickname
   nickname:string = '';
-
-
-  ngOnInit(): void {
-    $(document).ready(function(){
-      $('#nicknameEingabe').bind('keypress',function(evt){
-        var key = String.fromCharCode(evt.which || evt.charCode);
-        if($("#nicknameEingabe").text()!.toString().length <= 0){
-          if(/^[a-zA-Z]/i.test(key) === false) evt.preventDefault();;
-        }else{
-        if(/[a-zA-Z0-9]/i.test(key) === false) evt.preventDefault();
-        }
-      })
-    });
-  }
+  inputError:boolean = false;
 
 
   @Output() nicknameEvent = new EventEmitter<string>();
 
+  public validateNickname(){
+    let inputText = this.nickname
+    if (inputText.length > 0) {
+
+      if ((/([^A-Za-z])/).test(inputText.substring(0, 1)) || (/([^A-Za-z0-9])/).test(inputText.substring(1, inputText.length)) ) {
+        this.inputError = true;
+      } else {
+        this.inputError = false;
+      }
+    } else {
+      this.inputError = false;
+    }
+  }
+
   public sendNickname(){
-    this.nicknameEvent.emit(this.nickname);
-    this.pService.nickname = this.nickname;
+    if (!this.inputError) {
+      this.nicknameEvent.emit(this.nickname);
+      this.pService.nickname = this.nickname;
+    }
   }
 }
 

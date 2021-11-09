@@ -1,6 +1,9 @@
 <div class="container-fluid" id="font">
    <div class="input-group">
-        <textarea type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup.enter)="sendNickname()"></textarea>
-        <button type="button" id="buttonBestätigen" (click)="sendNickname()">Bestätigen</button>
+        <input type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup)="validateNickname()"  (keyup.enter)="sendNickname()"/>
+        <button type="button" id="buttonBestätigen" [disabled]="inputError"  (click)="sendNickname()">Bestätigen</button>
+    </div>
+    <div *ngIf="inputError" id=>
+        Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten.
     </div>
 </div>

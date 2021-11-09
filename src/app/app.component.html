@@ -19,7 +19,7 @@
       </div>
 
       <div class="col-xs-12 col-md-3">
-        <app-login>
+        <app-login (nicknameEvent)="loginUser($event)">
         <!-- Dies ist das Login. In login.component.html bearbeiten-->
         </app-login>
       </div>
@@ -28,13 +28,16 @@
 
         <!--Div für Chat-History-->
         <div class="col-xs-12">
-          <app-chat-history >
+          <app-chat-history [chatHistory]="messageArray">
           <!-- Dies ist die chat-history. In chat-history.component.html bearbeiten -->
           </app-chat-history>
         </div>
 
         <!--Div für Chat-Bar-->  
         <div class="col-xs-12">
+          <app-chat-bar (messageEvent)="receiveMessage($event)">
+            <!-- Dies ist die Chat-bar. In chat-bar.component.html bearbeiten -->
+          </app-chat-bar>          
         </div>
       </div>
 
