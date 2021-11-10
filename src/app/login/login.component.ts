@@ -33,7 +33,8 @@ export class LoginComponent {
   }
 
   public sendNickname(){
-    if (!this.inputError) {
+    this.validateNickname();
+    if (!this.inputError && this.nickname) {
       this.nicknameEvent.emit(this.nickname);
       this.pService.nickname = this.nickname;
     }

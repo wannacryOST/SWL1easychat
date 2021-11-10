@@ -15,8 +15,6 @@ export class ChatHistoryComponent {
 
   ngOnInit() {
   }
-
-    // document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight
 }
 
 
