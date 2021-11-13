@@ -1,23 +1,27 @@
 #grauerbereich {
-    background-color: #F2F2F2;
+    /* background-color: #F2F2F2; */
     border-radius: 5px;
-    margin: 20px;
-    padding: 20px;
-    height: 320px;
+    margin-top: 0.5vh;
+    margin-right: 1vh; /*für Rand auf der rechten Seite - müssen wir anders lösen!*/
+    padding: 1px;
+    height: 50vh;
+    position: relative;
+    border: solid red; /*kann wieder gelöscht werden*/
 }
 
 #messageList {
+    border: solid black; /*kann wieder gelöscht werden*/
     list-style-type: none;
-    padding: 20px;
-    background-color: #C4C4C440;
+    padding: 1vh;
+    /* background-color: #C4C4C440; */
     border-radius: 5px;
-    height: 230px;
+    height: 50vh;
     overflow: auto;
     
 }
 
 #messages {
-    background-color: #C4C4C4;
+    background-color: #DE7C78;
     border-radius: 5px;
     border: none;
     padding: 5px 20px 5px 20px;
@@ -27,6 +31,11 @@
 #textareamessage {
     resize: none;
     min-height: 15px;
-    background-color: #C4C4C440;
+    /* background-color: #DE7C78; */
     border: none;
+    white-space: pre-line;
+}
+
+#messagenickname{
+    font-weight: bold;
 }

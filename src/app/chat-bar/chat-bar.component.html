@@ -1,9 +1,10 @@
-<div class="container" id="font">
-    
-    
-      <div class="input-group">
-        <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="message" maxlength="999" id="eingabefeld" (keyup.enter)="sendMessage()"></textarea>
-        <button type="button" id="meinbutton" (click)="sendMessage()" [disabled]="!message">Absenden</button>
-      </div>
+<div class="container-fluid" id="font">
+  <div class="row" id="inputrow">
+
+    <div class="input-group">
+      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="message" maxlength="999" id="eingabefeld" (keyup.enter)="sendMessage()"></textarea>
+      <button type="button" id="meinbutton" (click)="sendMessage()" [disabled]="!message">Absenden</button>
+    </div>
 
   </div>
+</div>
