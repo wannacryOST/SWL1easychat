@@ -1,61 +1,41 @@
 #font {
-    font-family: 'Nunito';
     font-size: 15px;
-    height: auto;
-    border: solid black; /*kann wieder gelöscht werden*/
+    height: 8vh;
     position: relative;
-    /* margin-top: 5vh; */
     margin-bottom: 5vh;
 }
 
 #inputrow{
     height: auto;
-    /* position: absolute;
-    bottom: 0; */
 }
 
 .input-group {
     display: flex;
     justify-content: space-between;
-    padding: 0px;
+    margin-top: 5vh;
 }
-
-/* #ausgabefeld {
-    min-height: 90px; 
-    padding: 5px 15px 5px 15px;
-    margin-top: 100px;
-    border: 0px;
-    color: black;
-    border-radius: 5px;
-} */
 
 #eingabefeld {
     float: left;
     width: 75%;
-    height: 5vh; /*35px ersetzten durch vh? - done*/
+    height: 35px;
     resize: none;
-    padding: 1vh;
-    /* border: 0px; */
+    padding: 5px;
+    border-radius: 5px;    
     background-color: #AA4942;
     color: white;
-    border-radius: 5px;    
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
     color: white;
-    opacity: 1; /* Firefox */
   }
 
 #meinbutton {
-    /* margin-left: 20px; */
     width: 20%;
-    height: 5vh;
+    height: 35px;
     border-radius: 5px;
-    /* border: 0px; */
-    padding: 1vh;
     background-color: #8F352D;
     color: white;
-
 }
 
 #meinbutton:disabled {

@@ -2,15 +2,15 @@
     
     <div class="row">
         
-        <div class="col-xs-12" id="willkommen-row">Willkommen <br/> xy</div>
-    
-        <div class="col-xs-12" *ngIf="inputError" id="error-row">
-            Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten.
-        </div>
-    
+        <div class="col-xs-12" id="willkommen-row">Willkommen <br/> {{ this.pService.nickname }}</div>
+          
         <div class="input-group" id="input-row">
             <input type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup)="validateNickname()"  (keyup.enter)="sendNickname()"/>
             <button type="button" id="buttonBestätigen" [disabled]="inputError"  (click)="sendNickname()">Bestätigen</button>
+        </div>
+
+        <div class="col-xs-12" *ngIf="inputError" id="error-row">
+            Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten (max. 20 Zeichen).
         </div>
     
     </div>
