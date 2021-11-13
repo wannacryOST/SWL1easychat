@@ -1,27 +1,22 @@
 #font {
-    font-family: 'Nunito';
     font-size: 15px;
-    /* margin-top: 0.5vh; */
     margin-bottom: 5vh;
-    height: 60vh;
+    height: 58vh;
     border-right: 1px solid black;
     position: relative;
 }
 
 #willkommen-row{
-    font-size: 5vh;
+    font-size: 3vh;
     height: 30vh;
     display: flex;
     align-items: center;
-    justify-content: center; /*müsste Text eigentlich horizontal zentrieren...*/
-    border: solid blue; /*kann wieder gelöscht werden*/
+    justify-content: center;
 }
 
 #input-row{
     height: auto;
-    /* position: relative; */
-    /* bottom: 0; */
-    border: solid black;
+    margin-bottom: 1vh;
 }
 
 .input-group {
@@ -33,10 +28,9 @@
 #nicknameEingabe{
     float: left;
     width: 65%;
-    height: 5vh; /*35px ersetzten durch vh? - done*/
+    height: 35px; 
     resize: none;                   /*damit Benutzer das Feld in der Grösse nicht verändern kann */
     padding: 1vh;
-    border: 0px;
     border-radius: 5px;
     background-color: #AA4942;
     color: white; 
@@ -48,14 +42,13 @@
 
 #buttonBestätigen{
     width: 30%;
-    height: 5vh; /*35px ersetzten durch vh? - done*/
-    border: 0px;
+    height: 35px; 
+    padding: 0;
     border-radius: 5px;
     background-color: #8F352D;
     color: white;
 }
 
 #error-row{
-    /*margin-top: 15vh;*/ /*so ist der Fehlertext genau über Eingabefeldern*/
     background-color: #f99b99;
 }

@@ -4,7 +4,7 @@
     <ul id="messageList" #scrollMe [scrollTop]="scrollMe.scrollHeight">
 
       <li id="messages" *ngFor="let message of chatHistory">
-        <div id="textareamessage"><span *ngIf="message.nickname" id="messagenickname">{{ message.nickname }}</span>{{  message.message }}</div>
+        <div id="textareamessage"><span *ngIf="message.nickname" id="messagenickname">{{ message.nickname }}</span>{{ message.message }}</div>
       </li>
       
     </ul>

@@ -6,14 +6,14 @@ Der Header ist nicht fixiert. Dies wurde kundenseitig gewünscht
   width: 100%;
   background-color: white;
   padding: 10px;
-  height: 20vh;
-  border: solid green; /*kann wieder gelöscht werden*/
+  height: 15vh;
+  margin-bottom: 8vh; /*damit Login Componente nicht am Header klebt*/
 }
 
-/* muss noch ersetzt werden */
-#ostlogo {
+#logo {
   float: right;
-  width: 200px;
+  align-items: center;
+  width: 35vh;
 }
 
 #logo-row{
@@ -21,9 +21,17 @@ Der Header ist nicht fixiert. Dies wurde kundenseitig gewünscht
   height: 17vh;
 }
 
-#linien-row{
-  height: 3vh;
-  border-top: 1.5vh solid #8F352D;
+#linie1-row{
+  height: 1.5vh;
+  background-color: #8F352D;
+}
+
+#linie2-row{
+  height: 1vh;
   background-color: #AA4942;
-  border-bottom: 1vh solid #C4615B;
+}
+
+#linie3-row{
+  height: 1vh;
+  background-color: #C4615B;
 }

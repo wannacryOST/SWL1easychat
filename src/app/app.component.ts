@@ -20,9 +20,9 @@ export class AppComponent {
   receiveMessage($event : string) {
 
     
-
+// Fehlermeldung, wenn Message geschickt werden möchte, aber Nickname fehlt
     if (!this.pService.nickname) {
-      alert("zuerst anmelden");
+      alert("Bitte zuerst Nickname eingeben.");
       return
     }
 

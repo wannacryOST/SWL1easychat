@@ -1,23 +1,15 @@
 #grauerbereich {
-    /* background-color: #F2F2F2; */
     border-radius: 5px;
     margin-top: 0.5vh;
-    margin-right: 1vh; /*für Rand auf der rechten Seite - müssen wir anders lösen!*/
-    padding: 1px;
     height: 50vh;
     position: relative;
-    border: solid red; /*kann wieder gelöscht werden*/
 }
 
 #messageList {
-    border: solid black; /*kann wieder gelöscht werden*/
     list-style-type: none;
-    padding: 1vh;
-    /* background-color: #C4C4C440; */
     border-radius: 5px;
     height: 50vh;
     overflow: auto;
-    
 }
 
 #messages {
@@ -31,7 +23,6 @@
 #textareamessage {
     resize: none;
     min-height: 15px;
-    /* background-color: #DE7C78; */
     border: none;
     white-space: pre-line;
 }
