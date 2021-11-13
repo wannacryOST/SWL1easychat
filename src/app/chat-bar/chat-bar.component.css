@@ -1,5 +1,17 @@
 #font {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Nunito';
+    font-size: 15px;
+    height: auto;
+    border: solid black; /*kann wieder gelöscht werden*/
+    position: relative;
+    /* margin-top: 5vh; */
+    margin-bottom: 5vh;
+}
+
+#inputrow{
+    height: auto;
+    /* position: absolute;
+    bottom: 0; */
 }
 
 .input-group {
@@ -8,22 +20,23 @@
     padding: 0px;
 }
 
-#ausgabefeld {
-    min-height: 90px;
+/* #ausgabefeld {
+    min-height: 90px; 
     padding: 5px 15px 5px 15px;
     margin-top: 100px;
     border: 0px;
     color: black;
     border-radius: 5px;
-}
+} */
 
 #eingabefeld {
+    float: left;
     width: 75%;
-    height: 35px;
+    height: 5vh; /*35px ersetzten durch vh? - done*/
     resize: none;
-    padding: 5px 15px 5px 15px;
-    border: 0px;
-    background-color: #D72864;
+    padding: 1vh;
+    /* border: 0px; */
+    background-color: #AA4942;
     color: white;
     border-radius: 5px;    
 }
@@ -34,16 +47,17 @@
   }
 
 #meinbutton {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     width: 20%;
+    height: 5vh;
     border-radius: 5px;
-    border: 0px;
-    padding: 5px 15px 5px 15px;
-    background-color: #8C195F;
+    /* border: 0px; */
+    padding: 1vh;
+    background-color: #8F352D;
     color: white;
 
 }
 
 #meinbutton:disabled {
-    background-color: #ca73a9;
+    background-color: #9D726E;
 }

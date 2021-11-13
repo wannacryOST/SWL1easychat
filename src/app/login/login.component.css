@@ -1,14 +1,29 @@
-#welcomeText{
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid black;  /*kann wieder gelöscht werden */
-}
-
 #font {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
+    font-family: 'Nunito';
+    font-size: 15px;
+    /* margin-top: 0.5vh; */
+    margin-bottom: 5vh;
+    height: 60vh;
+    border-right: 1px solid black;
+    position: relative;
 }
 
-/*muss noch angepasst werden */
+#willkommen-row{
+    font-size: 5vh;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /*müsste Text eigentlich horizontal zentrieren...*/
+    border: solid blue; /*kann wieder gelöscht werden*/
+}
+
+#input-row{
+    height: auto;
+    /* position: relative; */
+    /* bottom: 0; */
+    border: solid black;
+}
+
 .input-group {
     display: flex;
     justify-content: space-between;
@@ -18,12 +33,12 @@
 #nicknameEingabe{
     float: left;
     width: 65%;
-    height: 35px;
+    height: 5vh; /*35px ersetzten durch vh? - done*/
     resize: none;                   /*damit Benutzer das Feld in der Grösse nicht verändern kann */
-    padding: 5px;
+    padding: 1vh;
     border: 0px;
     border-radius: 5px;
-    background-color: #D72864;
+    background-color: #AA4942;
     color: white; 
 }
 
@@ -33,9 +48,14 @@
 
 #buttonBestätigen{
     width: 30%;
+    height: 5vh; /*35px ersetzten durch vh? - done*/
     border: 0px;
     border-radius: 5px;
-    background-color: #8C195F;
+    background-color: #8F352D;
     color: white;
 }
 
+#error-row{
+    /*margin-top: 15vh;*/ /*so ist der Fehlertext genau über Eingabefeldern*/
+    background-color: #f99b99;
+}

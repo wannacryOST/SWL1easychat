@@ -4,14 +4,26 @@ Der Header ist nicht fixiert. Dies wurde kundenseitig gewünscht
 
 #header {
   width: 100%;
-  border-bottom: 1px solid black;
   background-color: white;
   padding: 10px;
-  height: 120px;
+  height: 20vh;
+  border: solid green; /*kann wieder gelöscht werden*/
 }
-  
+
+/* muss noch ersetzt werden */
 #ostlogo {
   float: right;
   width: 200px;
 }
 
+#logo-row{
+  border-bottom: 0.5vh solid black;
+  height: 17vh;
+}
+
+#linien-row{
+  height: 3vh;
+  border-top: 1.5vh solid #8F352D;
+  background-color: #AA4942;
+  border-bottom: 1vh solid #C4615B;
+}

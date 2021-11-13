@@ -1,9 +1,13 @@
 <div class="container" id=grauerbereich>
-  <div>
+  <div class="row">
+
     <ul id="messageList" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-        <li id="messages" *ngFor="let message of chatHistory">
-          <div id="textareamessage" style="white-space: pre-line;"><span *ngIf="message.nickname" style="font-weight: bold;">{{ message.nickname }}</span>{{  message.message }}</div>
-        </li>
+
+      <li id="messages" *ngFor="let message of chatHistory">
+        <div id="textareamessage"><span *ngIf="message.nickname" id="messagenickname">{{ message.nickname }}</span>{{  message.message }}</div>
+      </li>
+      
     </ul>
+
   </div>
 </div>
