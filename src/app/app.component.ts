@@ -1,3 +1,5 @@
+import { componentFactoryName } from '@angular/compiler';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component } from '@angular/core';
 import { PersonService } from './person.service';
 
@@ -16,6 +18,7 @@ export class AppComponent {
   nicknamehistory:string = '';
   message = "message string parent";
   messageArray: any[] = [];
+  type: string = ''; //https://stackoverflow.com/questions/46047502/generate-dynamic-css-based-on-variables-angular/46048424
 
   receiveMessage($event : string) {
 
@@ -29,7 +32,8 @@ export class AppComponent {
     this.message = $event;
     if (this.message) {
       this.nicknamehistory = this.pService.nickname + ": ";
-      var myobj = { message:this.message, nickname:this.nicknamehistory }
+      this.type = "message"
+      var myobj = { message:this.message, nickname:this.nicknamehistory, type:this.type } //type von chat-history aufrufen und dort id definieren um auf class zuzugreifen von css
       this.messageArray.push(myobj)
       this.message = ''
     }
@@ -41,4 +45,16 @@ export class AppComponent {
     })
   }
 
+  public messageJSON: string = '{"message": "...", "nickname": ""}' // key und value
+
+
 }
+
+/*
+chatbar 
+thi.chatmessageChange.emit(JSON.stringify({message: ValueConverter, nickname:this.nickname}))
+
+chathistory:
+public content: { message: string, nickname: string } [] = [];
+
+*/
