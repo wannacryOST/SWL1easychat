@@ -20,10 +20,12 @@ export class AppComponent {
   messageArray: any[] = [];
   noUser:boolean = false;
 
+  
+  // Methode, um Messages in der Chat-History auszugeben
   receiveMessage($event : string) {
 
     
-// Fehlermeldung, wenn Message geschickt werden möchte, aber Nickname fehlt
+    // Fehlermeldung, wenn Message geschickt werden möchte, aber Nickname fehlt
     if (!this.pService.nickname) {
       this.noUser = true
       return
@@ -31,6 +33,7 @@ export class AppComponent {
       this.noUser = false
     }
 
+    // Nickname wird der Nachricht voran gestellt und mit der Nachricht zusammengeführt
     this.message = $event;
     if (this.message) {
       let showNickname = true;
@@ -44,6 +47,7 @@ export class AppComponent {
     }
   }
 
+  // Infomeldung, dass neuer Benutzer dem Chat beigetreten ist
   loginUser($event : string) {
     this.noUser = false;
     this.messageArray.push({

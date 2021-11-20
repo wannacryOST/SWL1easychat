@@ -1,13 +1,15 @@
 <div class="container-fluid" id="font">
     
     <div class="row">
-        
-        <div class="col-xs-12" id="willkommen-row">Willkommen <br/> {{ this.pService.nickname }}</div>
-          
-        <div class="input-group" id="input-row">
-            <input type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup)="validateNickname()"  (keyup.enter)="sendNickname()"/>
-            <button type="button" id="buttonBestätigen" [disabled]="inputError"  (click)="sendNickname()">Bestätigen</button>
+
+        <div class="h-25 d-inline-block">
+            <div class="input-group" id="input-row">
+                <input type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup)="validateNickname()"  (keyup.enter)="sendNickname()" autofocus/>
+                <button type="button" id="buttonBestätigen" [disabled]="inputError"  (click)="sendNickname()">OK</button>
+            </div>
         </div>
+
+        <div class="h-50 d-inline-block" id="willkommen-row">Willkommen <br/> {{ this.pService.nickname }}</div>
 
         <div class="col-xs-12" *ngIf="inputError" class="error-row">
             Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten (max. 20 Zeichen).
