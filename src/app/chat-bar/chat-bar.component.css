@@ -1,6 +1,6 @@
 #font {
     font-size: 15px;
-    height: 8vh;
+    height: 5%; /*vorher 8vh*/
     position: relative;
     margin-bottom: 5vh;
 }
