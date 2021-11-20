@@ -11,6 +11,7 @@ export class ChatBarComponent {
 
   message:string = '';
 
+
   @Output() messageEvent = new EventEmitter<string>();
 
   public sendMessage() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { PersonService } from '../person.service';
 import * as $ from "jquery";
 
@@ -14,6 +14,8 @@ export class LoginComponent {
   //Deklaration Variable nickname
   nickname:string = '';
   inputError:boolean = false;
+
+  @Input()  noUser!:boolean;
 
 
   @Output() nicknameEvent = new EventEmitter<string>();

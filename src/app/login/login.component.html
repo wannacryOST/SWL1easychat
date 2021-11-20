@@ -9,9 +9,13 @@
             <button type="button" id="buttonBestätigen" [disabled]="inputError"  (click)="sendNickname()">Bestätigen</button>
         </div>
 
-        <div class="col-xs-12" *ngIf="inputError" id="error-row">
+        <div class="col-xs-12" *ngIf="inputError" class="error-row">
             Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten (max. 20 Zeichen).
         </div>
     
+        <div class="error-row" *ngIf="noUser">
+            Zuerst anmelden!
+        </div>
+          
     </div>
 </div>

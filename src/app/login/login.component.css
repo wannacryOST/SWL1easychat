@@ -49,11 +49,12 @@
     color: white;
 }
 
-#error-row{
+.error-row{
     background-color: #f99b99;
     border-radius: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 #buttonBestätigen:disabled {

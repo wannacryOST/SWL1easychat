@@ -12,30 +12,38 @@
     overflow: auto;
 }
 
-#messages {
-    background-color: #DE7C78;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    padding: 5px 20px 5px 20px;
-    margin: 12px 0px 12px 0px;
+.message {
     width: fit-content;
 }
 
-#textareamessage {
+.textareamessage {
+    background-color: #DE7C78;
+    color: white;
     resize: none;
     min-height: 15px;
     border: none;
     white-space: pre-line;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
+    margin: 12px 0px 12px 0px;
 }
 
-#messagenickname {
+.messagenickname {
     font-weight: bold;
 }
 
-/*
-#timeStamp {
+.timeStampMessage {
     font-size: 12px;
     color: blanchedalmond;
 } 
-*/
+
+.newusermessage {
+    background-color: #ffffff;
+    color: #DE7C78;
+    border-bottom: solid 1px #DE7C78;
+}
+
+.timeStampNewUser {
+    font-size: 12px;
+    color: #DE7C78;
+}

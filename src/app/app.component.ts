@@ -18,34 +18,43 @@ export class AppComponent {
   nicknamehistory:string = '';
   message = "message string parent";
   messageArray: any[] = [];
-  type: string = ''; //https://stackoverflow.com/questions/46047502/generate-dynamic-css-based-on-variables-angular/46048424
+  noUser:boolean = false;
 
   receiveMessage($event : string) {
 
     
 // Fehlermeldung, wenn Message geschickt werden möchte, aber Nickname fehlt
     if (!this.pService.nickname) {
-      alert("Bitte zuerst Nickname eingeben.");
+      this.noUser = true
       return
+    } else {
+      this.noUser = false
     }
 
     this.message = $event;
     if (this.message) {
-      this.nicknamehistory = this.pService.nickname + ": ";
-      this.type = "message"
-      var myobj = { message:this.message, nickname:this.nicknamehistory, type:this.type } //type von chat-history aufrufen und dort id definieren um auf class zuzugreifen von css
+      let showNickname = true;
+
+      if (this.messageArray[this.messageArray.length - 1].nickname === this.nicknamehistory) showNickname = false
+
+      this.nicknamehistory = this.pService.nickname;
+      var myobj = { message: this.message, nickname: this.nicknamehistory, type: 'message', timestamp: new Date(), showNickname: showNickname }
       this.messageArray.push(myobj)
       this.message = ''
     }
   }
 
   loginUser($event : string) {
+    this.noUser = false;
     this.messageArray.push({
-      message: $event + " ist dem Chat beigetreten"
+      message: "ist dem Chat beigetreten",
+      nickname: $event,
+      type: 'newUser',
+      timestamp: new Date()
     })
   }
 
-  public messageJSON: string = '{"message": "...", "nickname": ""}' // key und value
+  /* public messageJSON: string = '{"message": "...", "nickname": ""}' // key und value */
 
 
 }
