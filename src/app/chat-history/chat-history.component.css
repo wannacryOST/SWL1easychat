@@ -1,8 +1,9 @@
 #grauerbereich {
     border-radius: 5px;
     margin-top: 0.5vh;
-    height: 50vh;
+    height: 50%; /*vorher 50vh*/
     position: relative;
+    background-color: #F0ECEA;
 }
 
 #messageList {
@@ -36,6 +37,7 @@
 /*
 #timeStamp {
     font-size: 12px;
-    color: blanchedalmond;
+    color: #F6E7D8; 
 } 
 */
+/*Farbe vorher blanchedalmond*/

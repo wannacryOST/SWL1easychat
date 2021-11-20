@@ -1,21 +1,24 @@
+/* Gesamter Container der Login-Componente */
 #font {
-    font-size: 15px;
+    font-size: 15px; /*vw wäre besser, aber ist dann im kleinen Format zu klein, ändert dann nicht auf gross*/
     margin-bottom: 5vh;
-    height: 58vh;
+    /* Höhe in % ermöglich es, dass im kleinen Format die Höhe nicht zu gross ist */
+    height: 98%;
     border-right: 1px solid black;
     position: relative;
 }
 
 #willkommen-row{
-    font-size: 3vh;
+    font-size: 25px;
     height: 30vh;
     display: flex;
-    align-items: center;
+    align-items: center; /*funktioniert irgendwie nicht mehr... seit der height in % von font, glaub ich...*/
     justify-content: center;
 }
 
 #input-row{
     height: auto;
+    margin-top: 1vh;
     margin-bottom: 1vh;
 }
 
@@ -23,6 +26,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0px;
+    max-width: 100%;
 }
 
 #nicknameEingabe{
@@ -33,11 +37,16 @@
     padding: 1vh;
     border-radius: 5px;
     background-color: #AA4942;
-    color: white; 
+    color: white;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
 }
 
 ::placeholder{
     color: white;
+    max-width: 100%;
+    /* text-overflow: ellipsis; */
+    /* font-size: 1vh; */
 }
 
 #buttonBestätigen{

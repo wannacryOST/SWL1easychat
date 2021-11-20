@@ -20,15 +20,18 @@ export class AppComponent {
   messageArray: any[] = [];
   type: string = ''; //https://stackoverflow.com/questions/46047502/generate-dynamic-css-based-on-variables-angular/46048424
 
+  
+  // Methode, um Messages in der Chat-History auszugeben
   receiveMessage($event : string) {
 
     
-// Fehlermeldung, wenn Message geschickt werden möchte, aber Nickname fehlt
+    // Fehlermeldung, wenn Message geschickt werden möchte, aber Nickname fehlt
     if (!this.pService.nickname) {
       alert("Bitte zuerst Nickname eingeben.");
       return
     }
 
+    // Nickname wird der Nachricht voran gestellt und mit der Nachricht zusammengeführt
     this.message = $event;
     if (this.message) {
       this.nicknamehistory = this.pService.nickname + ": ";
@@ -39,6 +42,7 @@ export class AppComponent {
     }
   }
 
+  // Infomeldung, dass neuer Benutzer dem Chat beigetreten ist
   loginUser($event : string) {
     this.messageArray.push({
       message: $event + " ist dem Chat beigetreten"
