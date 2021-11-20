@@ -22,9 +22,9 @@
         </app-header>
       </div>
 
-      <!-- Div für Login - im kleinen Format ändert es die Position von links nach oben -->
+      <!-- Div für Login -->
       <div class="col-xs-12 col-lg-3">
-        <app-login (nicknameEvent)="loginUser($event)">
+        <app-login (nicknameEvent)="loginUser($event)" [noUser]="noUser">
         <!-- Dies ist das Login. In login.component.html bearbeiten-->
         </app-login>
       </div>
@@ -41,7 +41,7 @@
 
         <!--Div für Chat-Bar-->  
         <div class="col-xs-12">
-          <app-chat-bar (messageEvent)="receiveMessage($event)">
+          <app-chat-bar (messageEvent)="receiveMessage($event)" >
             <!-- Dies ist die Chat-bar. In chat-bar.component.html bearbeiten -->
           </app-chat-bar>          
         </div>
@@ -59,4 +59,3 @@
 
 </body>
 </html>
-

@@ -3,8 +3,15 @@
 
     <ul id="messageList" #scrollMe [scrollTop]="scrollMe.scrollHeight">
 
-      <li id="messages" *ngFor="let message of chatHistory">
-        <div id="textareamessage"><span *ngIf="message.nickname" id="messagenickname">{{ message.nickname }}</span> <!-- <span id="timeStamp"> {{ message.timeStamp }} </span> --> {{ message.message }}</div>
+      <li class="message" *ngFor="let message of chatHistory">
+        <div *ngIf="message.type === 'message'" class="textareamessage">
+          <span *ngIf="message.nickname && message.showNickname" class="messagenickname">{{ message.nickname }}: </span> <span class="timeStampMessage" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }} </span><br/>{{ message.message }}
+        </div>
+
+        <div *ngIf="message.type === 'newUser'" class="textareamessage newusermessage" >
+          <span *ngIf="message.nickname" class="messagenickname">{{ message.nickname }} {{ message.message }} </span> <span class="timeStampNewUser" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }} </span> 
+        </div>
+      
       </li>
       
     </ul>
