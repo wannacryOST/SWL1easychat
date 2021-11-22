@@ -13,13 +13,16 @@ export class LoginComponent {
 
   //Deklaration Variable nickname
   nickname:string = '';
+  // Deklaration Variable inputError
   inputError:boolean = false;
 
+  // importiert den noUser aus der App-Component
   @Input()  noUser!:boolean;
 
-
+  // NicknameEvent wird der App-Component übergeben
   @Output() nicknameEvent = new EventEmitter<string>();
 
+  // Methode, die den Nickname auf den regEx prüft und den inputError auf true oder false setzt
   public validateNickname(){
     let inputText = this.nickname
     if (inputText.length > 0) {
@@ -34,6 +37,7 @@ export class LoginComponent {
     }
   }
 
+  // Methode, die den Nickname dem pService übergibt
   public sendNickname(){
     this.validateNickname();
     if (!this.inputError && this.nickname) {
@@ -43,4 +47,3 @@ export class LoginComponent {
     }
   }
 }
-

@@ -8,6 +8,7 @@ import { PersonService } from '../person.service';
 })
 export class ChatHistoryComponent {
 
+  // Import des Arrays chatHistory aus der App-Component
   @Input() chatHistory!: any[];
 
 
