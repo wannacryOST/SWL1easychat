@@ -27,7 +27,7 @@ export class AppComponent {
   noUser:boolean = false;
 
   
-  // Methode, nimmt Event entgeben, wenn Message abgesendet wird in der Chat-bar-Component
+  // Methode, die Message entgegen nimmt und in den messageArray einfügt
   receiveMessage($event : string) {
     
     // Fehlermeldung, wenn Nickname fehlt, wird Variable noUser auf true gesetzt
