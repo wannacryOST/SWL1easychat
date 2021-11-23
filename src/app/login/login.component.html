@@ -16,9 +16,15 @@
         <div class="col-xs-12" *ngIf="inputError" class="error-row">
             Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten (max. 20 Zeichen).
         </div>
+        
         <!-- Fehlermeldung noUser, wenn Nickname fehlt -->
         <div class="error-row" *ngIf="noUser">
-            Bitte zuerst anmelden!
+            Bitte zuerst einen Nickname eingeben!
+        </div>
+
+        <!-- Fehlermeldung noUser, wenn Nickname fehlt -->
+        <div class="error-row" *ngIf="sameUser">
+            Nickname ist bereits vergeben!
         </div>
           
     </div>
