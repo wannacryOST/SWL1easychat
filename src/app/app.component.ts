@@ -26,8 +26,15 @@ export class AppComponent {
   // Definition noUser für Fehlermeldung, wenn Nickname fehlt
   noUser:boolean = false;
 
-  
-  // Methode, die Message entgegen nimmt und in den messageArray einfügt
+
+  //Methode die alle Nachrichten löscht wenn das Array mehr als 20 Nachrichten enthält
+  deleteArray() {
+    if (this.messageArray.length > 19) {
+      this.messageArray.shift();
+    }
+  }
+
+  // Methode, nimmt Event entgeben, wenn Message abgesendet wird in der Chat-bar-Component
   receiveMessage($event : string) {
     
     // Fehlermeldung, wenn Nickname fehlt, wird Variable noUser auf true gesetzt
@@ -37,6 +44,7 @@ export class AppComponent {
     } else {
       this.noUser = false
     }
+
     // Nickname wird der Nachricht voran gestellt und mit der Nachricht zusammengeführt
     this.message = $event;
     if (this.message) {
@@ -44,10 +52,10 @@ export class AppComponent {
       let showNickname = true;
       // wenn der aktuelle Nickname mit dem Nicknamen der letzten Message übereinstimmt, wird der Nickname nicht angezeigt
       if (this.messageArray[this.messageArray.length - 1].nickname === this.nicknamehistory) showNickname = false
-      
       this.nicknamehistory = this.pService.nickname;
       var myobj = { message: this.message, nickname: this.nicknamehistory, type: 'message', timestamp: new Date(), showNickname: showNickname }
       this.messageArray.push(myobj)
+      this.deleteArray();
       this.message = ''
     }
   }
@@ -55,11 +63,24 @@ export class AppComponent {
   // Infomeldung, dass neuer Benutzer dem Chat beigetreten ist
   loginUser($event : string) {
     this.noUser = false;
-    this.messageArray.push({
-      message: "ist dem Chat beigetreten",
-      nickname: $event,
-      type: 'newUser',
-      timestamp: new Date()
-    })
-  }
+    // if (!nickname) {
+    if (!this.pService.nickname) {
+      this.messageArray.push({
+        message: "ist dem Chat beigetreten",
+        nickname: $event,
+        type: 'newUser',
+        timestamp: new Date()
+      })
+      this.deleteArray();
+    }
+
+    else {
+      this.messageArray.push({
+        message: this.pService.nickname + " hat den Namen zu " + $event + " geändert.",
+        nickname: $event,
+        type: 'changeUser',
+        timestamp: new Date()
+      })
+      this.deleteArray();
+    }}
 }

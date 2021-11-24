@@ -21,6 +21,9 @@ export class LoginComponent {
   // importiert den noUser aus der App-Component
   @Input()  noUser!:boolean;
 
+  // definiert den sameUser
+  sameUser:boolean = false;
+
   // NicknameEvent wird der App-Component übergeben
   @Output() nicknameEvent = new EventEmitter<string>();
 
@@ -42,6 +45,13 @@ export class LoginComponent {
   // Methode, die den Nickname dem pService übergibt und Willkommen-Text ausgibt
   public sendNickname(){
     this.validateNickname();
+    if (this.nickname == this.pService.nickname) {
+      this.sameUser = true;
+      return
+    }
+    else {
+      this.sameUser = false;
+    }
     if (!this.inputError && this.nickname) {
       this.nicknameEvent.emit(this.nickname);
       this.pService.nickname = this.nickname;

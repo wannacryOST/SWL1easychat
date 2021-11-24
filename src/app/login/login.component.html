@@ -23,7 +23,12 @@
         
         <!-- Fehlermeldung noUser, wenn Nickname fehlt -->
         <div class="error-row" *ngIf="noUser">
-            Bitte zuerst den Nicknamen eingeben!
+            Bitte zuerst einen Nickname eingeben!
+        </div>
+
+        <!-- Fehlermeldung noUser, wenn Nickname fehlt -->
+        <div class="error-row" *ngIf="sameUser">
+            Nickname ist bereits vergeben!
         </div>
           
     </div>
