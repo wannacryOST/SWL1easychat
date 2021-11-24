@@ -1,17 +1,21 @@
 <div class="container-fluid" id="font">
     
     <div class="row">
+        <!-- falls eine Anweisung für die Nickname-Eingabe angezeigt werden möchte -->
+        <!-- <div class="col-xs-12" id="anweisung-row">Gib hier deinen Nicknamen ein!</div> -->
 
         <div class="h-25 d-inline-block">
             <div class="input-group" id="input-row">
                 <!-- Inputfeld für Nickname -->
                 <input type="text" placeholder="Nickname eingeben" [(ngModel)]="nickname" maxlength="20" id="nicknameEingabe" (keyup)="validateNickname()"  (keyup.enter)="sendNickname()" autofocus/>
                 <!-- Button, Nickname zu bestätigen -->
-                <button type="button" id="buttonBestätigen" [disabled]="inputError"  (click)="sendNickname()">OK</button>
+                <button type="button" id="buttonBestätigen" [disabled]="inputError || !nickname"  (click)="sendNickname()">OK</button>
             </div>
         </div>
-        <!-- Willkommen-Text mit Angabe des Nicknames -->
-        <div class="h-50 d-inline-block" id="willkommen-row">Willkommen <br/> {{ this.pService.nickname }}</div>
+        
+        <!-- Willkommen-Text mit Angabe des Nicknames -->       
+        <output class="h-50 d-inline-block" id="willkommen-row">{{this.welcomeText}}</output>
+        
         <!-- Fehlemeldung inputError, wenn Nickname nicht dem regEx entspricht -->
         <div class="col-xs-12" *ngIf="inputError" class="error-row">
             Der Nickname muss mit einem Buchstaben beginnen und darf nur Buchstaben und Zahlen enthalten (max. 20 Zeichen).

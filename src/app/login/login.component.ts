@@ -15,6 +15,8 @@ export class LoginComponent {
   nickname:string = '';
   // Deklaration Variable inputError
   inputError:boolean = false;
+  // Deklaration Variable welcomeText
+  welcomeText:string= '';
 
   // importiert den noUser aus der App-Component
   @Input()  noUser!:boolean;
@@ -30,7 +32,7 @@ export class LoginComponent {
     let inputText = this.nickname
     if (inputText.length > 0) {
 
-      if ((/([^A-Za-z])/).test(inputText.substring(0, 1)) || (/([^A-Za-z0-9])/).test(inputText.substring(1, inputText.length)) ) {
+      if ((/([^A-Za-zäöüÄÖÜ])/).test(inputText.substring(0, 1)) || (/([^A-Za-z0-9ÄÖÜäöü])/).test(inputText.substring(1, inputText.length)) ) {
         this.inputError = true;
       } else {
         this.inputError = false;
@@ -40,11 +42,7 @@ export class LoginComponent {
     }
   }
 
- 
-
-  
-
-  // Methode, die den Nickname dem pService übergibt
+  // Methode, die den Nickname dem pService übergibt und Willkommen-Text ausgibt
   public sendNickname(){
     this.validateNickname();
     if (this.nickname == this.pService.nickname) {
@@ -57,7 +55,9 @@ export class LoginComponent {
     if (!this.inputError && this.nickname) {
       this.nicknameEvent.emit(this.nickname);
       this.pService.nickname = this.nickname;
+      this.welcomeText = "Willkommen " + this.nickname +"!";
       this.nickname='';
+      // document.getElementById("anweisung-row").style.visibility='hidden';
     }
   }
 }

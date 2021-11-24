@@ -3,14 +3,24 @@
     font-size: 15px; /*vw wäre besser, aber ist dann im kleinen Format zu klein, ändert dann nicht auf gross*/
     margin-bottom: 5vh;
     /* Höhe in % ermöglich es, dass im kleinen Format die Höhe nicht zu gross ist */
-    height: 98%;
+    height: 95%;
     border-right: 1px solid black;
     position: relative;
 }
 
+/* #anweisung-row{
+    background-color: #f99b99;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    visibility: visible;
+} */
+
 #willkommen-row{
     font-size: 25px;
     height: 30vh;
+    word-wrap: break-word; /*lange Nicknamen werden aufgeteilt auf zwei Zeilen*/
     display: flex;
     align-items: center; /*funktioniert irgendwie nicht mehr... seit der height in % von font, glaub ich...*/
     justify-content: center;
@@ -31,7 +41,7 @@
 
 #nicknameEingabe{
     float: left;
-    width: 65%;
+    width: 75%;
     height: 35px; 
     resize: none;                   /*damit Benutzer das Feld in der Grösse nicht verändern kann */
     padding: 1vh;
@@ -51,7 +61,7 @@
 }
 
 #buttonBestätigen{
-    width: 30%;
+    width: 20%;
     height: 35px; 
     padding: 0;
     border-radius: 5px;

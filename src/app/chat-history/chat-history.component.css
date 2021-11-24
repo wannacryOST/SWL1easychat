@@ -1,7 +1,7 @@
 #grauerbereich {
     border-radius: 5px;
     margin-top: 0.5vh;
-    height: 50%; /*vorher 50vh*/
+    height: 48%;
     position: relative;
     background-color: #F0ECEA;
 }
@@ -48,6 +48,29 @@
 
 .timeStampNewUser {
     font-size: 12px;
-    color: #DE7C78;
-    
+    color: #DE7C78; 
 }
+
+/* Scrollbar-Design */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    margin-top: 5px;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DE7C78;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #AA4942;
+  }
