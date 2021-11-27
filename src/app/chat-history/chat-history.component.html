@@ -8,19 +8,23 @@
         <!-- ngIf prüft, ob Message vom Typ message ist-->
         <div *ngIf="message.type === 'message'" class="textareamessage">
           <!-- ngIf setzt zusammen: Nickname, Timestamp und Message -->
-          <span *ngIf="message.nickname && message.showNickname" class="messagenickname">{{ message.nickname }}: </span> <span class="timeStampMessage" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }} </span><br/>{{ message.message }}
+          <span *ngIf="message.nickname && message.showNickname" class="messagenickname">{{ message.nickname }}:</span> 
+          <span class="timeStampMessage" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }}</span>
+          <br/>{{ message.message }}
         </div>
 
         <!-- ngIf prüft, ob Message vom Typ newUser ist (Infomeldung: "xy ist dem Chat beigetreten")-->
         <div *ngIf="message.type === 'newUser'" class="textareamessage newusermessage" >
           <!-- nfIf setzt zusammen: Nickname und Timestamp -->
-          <span *ngIf="message.nickname" class="messagenickname">{{ message.nickname }} {{ message.message }} </span> <span class="timeStampNewUser" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }} </span> 
+          <span *ngIf="message.nickname" class="messagenickname">{{ message.nickname }} {{ message.message }}</span> 
+          <span class="timeStampNewUser" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }}</span> 
         </div>
 
         <!-- ngIf prüft, ob Message vom Typ newUser ist (Infomeldung: "xy ist dem Chat beigetreten")-->
         <div *ngIf="message.type === 'changeUser'" class="textareamessage newusermessage" >
           <!-- nfIf setzt zusammen: Nickname und Timestamp -->
-          <span *ngIf="message.nickname" class="messagenickname">{{ message.message }}</span> <span class="timeStampNewUser" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }} </span> 
+          <span *ngIf="message.nickname" class="messagenickname">{{ message.message }}</span> 
+          <span class="timeStampNewUser" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }}</span> 
         </div>
       
       </li>

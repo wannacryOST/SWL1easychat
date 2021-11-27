@@ -20,5 +20,13 @@ export class ChatHistoryComponent {
   }
 }
 
+// ngAfterContentChecked() {
 
+// this.cdref.detectChanges();
+
+// var el = $('#messageList')
+
+// el.scrollTop($('#messageList').prop('scrollHeight'))
+
+// }
 

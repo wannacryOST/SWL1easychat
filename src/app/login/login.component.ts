@@ -42,11 +42,12 @@ export class LoginComponent {
     }
   }
 
-  // Methode, die den Nickname dem pService übergibt und Willkommen-Text ausgibt
+  // Methode, die den Nickname prüft und dem pService übergibt und Willkommen-Text ausgibt
   public sendNickname(){
     this.validateNickname();
     if (this.nickname == this.pService.nickname) {
       this.sameUser = true;
+      this.nickname='';
       return
     }
     else {

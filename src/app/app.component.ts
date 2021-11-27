@@ -73,7 +73,7 @@ export class AppComponent {
       })
       this.deleteArray();
     }
-
+    // wenn vorher bereits einen Nicknamen eingegeben wurde, wird Text "xy hat den Namen zu xy geändert" ausgegeben
     else {
       this.messageArray.push({
         message: this.pService.nickname + " hat den Namen zu " + $event + " geändert.",
