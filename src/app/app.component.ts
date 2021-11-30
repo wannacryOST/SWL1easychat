@@ -29,7 +29,7 @@ export class AppComponent {
 
   //Methode die alle Nachrichten löscht wenn das Array mehr als 20 Nachrichten enthält
   deleteArray() {
-    if (this.messageArray.length > 19) {
+    if (this.messageArray.length > 20) {
       this.messageArray.shift();
     }
   }

@@ -3,7 +3,7 @@
 
     <div class="input-group">
       <!-- Inputfeld, um Nachricht einzugeben -->
-      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="message" maxlength="999" id="eingabefeld" (keyup.enter)="sendMessage()"></textarea>
+      <textarea type="text" placeholder="Hier Text eingeben" [(ngModel)]="message" maxlength="9999" id="eingabefeld" (keyup.enter)="sendMessage()"></textarea>
       <!-- Button, um Nachricht abzusenden -->
       <button type="button" id="meinbutton" (click)="sendMessage()" [disabled]="!message">Absenden</button>
     </div>

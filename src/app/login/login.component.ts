@@ -47,6 +47,10 @@ export class LoginComponent {
     this.validateNickname();
     if (this.nickname == this.pService.nickname) {
       this.sameUser = true;
+      if (!this.nickname) {
+        this.sameUser = false;
+        return
+      }
       this.nickname='';
       return
     }
