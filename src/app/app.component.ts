@@ -2,6 +2,8 @@ import { componentFactoryName } from '@angular/compiler';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component } from '@angular/core';
 import { PersonService } from './person.service';
+import { ChatService } from './chat.service';
+import { Message } from './message';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { PersonService } from './person.service';
 })
 export class AppComponent {
 
-  constructor(public pService: PersonService) { }
+  constructor(public pService: PersonService, public cService: ChatService) { }
 
   public title: string = 'EasyChat';
   
@@ -28,7 +30,7 @@ export class AppComponent {
 
 
   //Methode die alle Nachrichten löscht wenn das Array mehr als 20 Nachrichten enthält
-  deleteArray() {
+  deleteFirstArray() {
     if (this.messageArray.length > 20) {
       this.messageArray.shift();
     }
@@ -50,12 +52,20 @@ export class AppComponent {
     if (this.message) {
       // showNickname wird auf true gesetzt, damit wird Nickname vor der Message angezeigt
       let showNickname = true;
-      // wenn der aktuelle Nickname mit dem Nicknamen der letzten Message übereinstimmt, wird der Nickname nicht angezeigt
-      if (this.messageArray[this.messageArray.length - 1].nickname === this.nicknamehistory) showNickname = false
+      
       this.nicknamehistory = this.pService.nickname;
-      var myobj = { message: this.message, nickname: this.nicknamehistory, type: 'message', timestamp: new Date(), showNickname: showNickname }
-      this.messageArray.push(myobj)
-      this.deleteArray();
+
+      //erstellt Objekt m
+      let m = new Message(this.message, this.nicknamehistory, new Date(), 'message');
+
+      //Objekt m in addToHistory Methode hinein pushen
+      this.cService.addToHistory(m).subscribe(
+      (response:Message) => {
+      console.log('REST servergaveback' + response);
+      })
+
+      //löscht erstes Objekt
+      this.deleteFirstArray();
       this.message = ''
     }
   }
@@ -63,24 +73,24 @@ export class AppComponent {
   // Infomeldung, dass neuer Benutzer dem Chat beigetreten ist
   loginUser($event : string) {
     this.noUser = false;
+    let m;
     // if (!nickname) {
     if (!this.pService.nickname) {
-      this.messageArray.push({
-        message: "ist dem Chat beigetreten",
-        nickname: $event,
-        type: 'newUser',
-        timestamp: new Date()
-      })
-      this.deleteArray();
+
+      m = new Message("ist dem Chat beigetreten", $event, new Date(), 'newUser');
+
     }
     // wenn vorher bereits einen Nicknamen eingegeben wurde, wird Text "xy hat den Namen zu xy geändert" ausgegeben
     else {
-      this.messageArray.push({
-        message: this.pService.nickname + " hat den Namen zu " + $event + " geändert.",
-        nickname: $event,
-        type: 'changeUser',
-        timestamp: new Date()
+
+      m = new Message(this.pService.nickname + " hat den Namen zu " + $event + " geändert.", $event, new Date(), 'changeUser');
+
+    }
+
+    //Objekt m in addToHistory Methode hinein pushen    
+    this.cService.addToHistory(m).subscribe(
+      (response:Message) => {
+      console.log('REST servergaveback' + response);
       })
-      this.deleteArray();
-    }}
+  }
 }

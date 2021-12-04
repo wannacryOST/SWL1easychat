@@ -9,6 +9,8 @@ import { ChatBarComponent } from './chat-bar/chat-bar.component';
 import { ChatHistoryComponent } from './chat-history/chat-history.component';
 import { LoginComponent } from './login/login.component';
 import { PersonService } from './person.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { PersonService } from './person.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule, 
+    //HttpClient,
+    HttpClientModule,
+    //HttpHeaders
   ],
   providers: [LoginComponent, PersonService],
   bootstrap: [AppComponent]

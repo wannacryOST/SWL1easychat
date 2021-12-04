@@ -1,4 +1,4 @@
-<div class="container" id=grauerbereich>
+<div class="container" id="grauerbereich">
   <div class="row">
     <!-- Liste, die automatisch ans Ende scrollt -->
     <ul id="messageList" #scrollMe [scrollTop]="scrollMe.scrollHeight">
@@ -6,7 +6,7 @@
       <li class="message" *ngFor="let message of chatHistory">
         
         <!-- ngIf prüft, ob Message vom Typ message ist-->
-        <div *ngIf="message.type === 'message'" class="textareamessage">
+        <div *ngIf="message.type === 'message' || message.type === undefined" class="textareamessage">
           <!-- ngIf setzt zusammen: Nickname, Timestamp und Message -->
           <span *ngIf="message.nickname && message.showNickname" class="messagenickname">{{ message.nickname }}:</span> 
           <span class="timeStampMessage" *ngIf="message.timestamp"> {{ message.timestamp.toLocaleTimeString() }}</span>
