@@ -11,10 +11,15 @@ import { Message } from '../message';
 
 export class ChatHistoryComponent {
 
-  chatHistory:any[] = []
+  chatHistory:any[] = [];
+
+
+  dateNow:Date = new Date;
 
 
   constructor(public pService: PersonService, public cService: ChatService) { } 
+
+  @Input()  nickname!: string;
 
   //alle 2sek wird Serverseitig neu geladen
   ngOnInit() {

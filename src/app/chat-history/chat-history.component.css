@@ -20,6 +20,14 @@
     box-shadow: 0px 5px 20px #aa49422d;
 }
 
+.ownMessage {
+    float: right;
+    width: fit-content;
+    max-width: 100%;
+    word-wrap: break-word;
+    box-shadow: 0px 5px 20px #aa49422d;
+}
+
 .textareamessage {
     background-color: #DE7C78;
     color: white;

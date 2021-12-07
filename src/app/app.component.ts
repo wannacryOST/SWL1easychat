@@ -74,7 +74,9 @@ export class AppComponent {
   loginUser($event : string) {
     this.noUser = false;
     let m;
-    // if (!nickname) {
+    console.log($event);
+    console.log(this.pService.nickname);
+
     if (!this.pService.nickname) {
 
       m = new Message("ist dem Chat beigetreten", $event, new Date(), 'newUser');
@@ -82,7 +84,7 @@ export class AppComponent {
     }
     // wenn vorher bereits einen Nicknamen eingegeben wurde, wird Text "xy hat den Namen zu xy geändert" ausgegeben
     else {
-
+     
       m = new Message(this.pService.nickname + " hat den Namen zu " + $event + " geändert.", $event, new Date(), 'changeUser');
 
     }
