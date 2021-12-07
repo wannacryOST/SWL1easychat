@@ -10,6 +10,7 @@ import { ChatHistoryComponent } from './chat-history/chat-history.component';
 import { LoginComponent } from './login/login.component';
 import { PersonService } from './person.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     //HttpHeaders
   ],
-  providers: [LoginComponent, PersonService],
+  providers: [LoginComponent, PersonService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
