@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { PersonService } from './person.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { DatePipe } from '@angular/common';
     ChatBarComponent,
     ChatHistoryComponent,
     LoginComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

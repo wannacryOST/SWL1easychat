@@ -1,21 +1,17 @@
 /* Gesamter Container der Login-Componente */
-#font {
+#container1 {
     font-size: 15px; /*vw wäre besser, aber ist dann im kleinen Format zu klein, ändert dann nicht auf gross*/
-    margin-bottom: 5vh;
     /* Höhe in % ermöglich es, dass im kleinen Format die Höhe nicht zu gross ist */
     height: 95%;
-    border-right: 1px solid black;
     position: relative;
 }
 
-/* #anweisung-row{
-    background-color: #f99b99;
-    border-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    visibility: visible;
-} */
+#row{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 #willkommen-row{
     font-size: 25px;

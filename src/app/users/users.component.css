@@ -1,0 +1,36 @@
+#userbereich{
+    font-family: 'Montserrat';
+    height: 50%;
+}
+
+#userList{
+    list-style-type: none;
+    font-family: 'Montserrat';
+    height: 30vh;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Scrollbar-Design */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    margin-top: 5px;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #d6cfcf;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #AA4942;
+  }
