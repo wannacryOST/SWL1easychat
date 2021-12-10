@@ -11,7 +11,8 @@ import { Message } from '../message';
 })
 export class UsersComponent {
 
-  usersArray:any[] = [];
+  // usersArray:any[] = [];
+  activeUsers: any[] = [];
 
   constructor(public cService: ChatService) { }
 
@@ -19,25 +20,36 @@ export class UsersComponent {
 
  //alle 2sek wird Serverseitig neu geladen
   ngOnInit() {
-  setInterval(() => {
-    this.getUsers();
-  }, 2000);
-}
+
+    setInterval(() => {
+      this.getUsers();
+    }, 2000);
+  }
 
   private getUsers(): void{
     this.cService.getHistory().subscribe((response: Message[]) => {
-      this.usersArray = [];
-      // Type des Nicknames ins Variable speichern, nur newUser
-      // let t = msg.type;
-      // newUser in usersArray pushen
-      // if(t = 'newUser'){
 
-        for(let msg of response){
-          this.usersArray.push({nickname: msg.nickname});
+      // this.usersArray = [];
+      this.activeUsers = [];
+      
+      //  for-Schleife pusht alle Nicknamen und Types aus der History in UsersArray
+      for(let msg of response){  
+        if(msg.type=="newUser"){
+          this.activeUsers.unshift({nickname: msg.nickname});
         }
-      // }
-      // Type sameUser nicht in Array pushen, sondern alter Nickname im Array mit neuem überschreiben
-      // ...
+      }
+      
+      for(let msg of response){
+        if (msg.type=="changeUser"){
+          this.activeUsers.unshift({nickname: msg.nickname});
+          var userAlt = msg.message.split(" ")[0];
+          // for(let msg of response){
+          //   var userNeu = msg.nickname;
+          //   var hideAlt = this.activeUsers.find({msg.nickname} == userAlt)
+          //   hideAlt.style.visibility = "hidden";
+          // }
+        }
+      }            
     },
     (error: any) => {
       console.log(<any>error);
