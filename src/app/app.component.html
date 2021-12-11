@@ -25,13 +25,24 @@
 
       <!-- Div für Login hier gehört [sameUser]="sameUser" allenfalls rein-->
       <div class="col-xs-12 col-lg-3">
-        <app-login (nicknameEvent)="loginUser($event)" [noUser]="noUser">
-        <!-- Dies ist das Login. In login.component.html bearbeiten-->
-        </app-login>
+        <div class="row" id="loginrow">
+          <app-login (nicknameEvent)="loginUser($event)" [noUser]="noUser">
+          <!-- Dies ist das Login. In login.component.html bearbeiten-->
+          </app-login>
+        </div>
+
+        <div class="row" id="usersrow">
+          <div class="col-xs-12">
+            <app-users>
+              <!-- Dies ist der User-Bereich. In users.component.html bearbeiten -->
+            </app-users>
+          </div>
+        </div>
+
       </div>
 
       <!-- Div für Conent-Bereich - im kleinen Format ändert es die Position auf die ganze Breite -->
-      <div class="col-xs-12 col-lg-9">
+      <div class="col-xs-12 col-lg-9" id="content">
 
         <!--Div für Chat-History-->
         <div class="col-xs-12">

@@ -62,7 +62,6 @@ export class LoginComponent {
       this.pService.nickname = this.nickname;
       this.welcomeText = "Willkommen " + this.nickname +"!";
       this.nickname='';
-      // document.getElementById("anweisung-row").style.visibility='hidden';
     }
   }
 }
