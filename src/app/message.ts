@@ -4,11 +4,13 @@ export class Message {
     public timestamp: Date;
     public type: string;
     public showNickname: boolean = true;
-    
-    constructor(message: string, nickname: string, date: Date, type: string){
+    public userId;
+
+    constructor(message: string, nickname: string, date: Date, type: string, userId:any){
         this.message = message;
         this.nickname = nickname;
         this.timestamp = date;
         this.type = type;
+        this.userId = userId;
       }
 }
