@@ -19,6 +19,9 @@ export class AppComponent {
   // Definition Variable nicknamehistory
   nicknamehistory:string = '';
 
+  // Definition Variable ownNickname für chat-history links und rechtsbündig
+  ownNickname:string = '';
+
   // Definiton Variable message
   message = '';
 
@@ -38,7 +41,7 @@ export class AppComponent {
 
   // Methode, nimmt Event entgeben, wenn Message abgesendet wird in der Chat-bar-Component
   receiveMessage($event : string) {
-    
+
     // Fehlermeldung, wenn Nickname fehlt, wird Variable noUser auf true gesetzt
     if (!this.pService.nickname) {
       this.noUser = true
@@ -72,8 +75,10 @@ export class AppComponent {
 
   // Infomeldung, dass neuer Benutzer dem Chat beigetreten ist
   loginUser($event : string) {
+    this.ownNickname = $event;
     this.noUser = false;
     let m;
+    console.log(this.ownNickname);
     console.log($event);
     console.log(this.pService.nickname);
 
