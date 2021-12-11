@@ -1,6 +1,6 @@
 import { componentFactoryName } from '@angular/compiler';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
-import { Component } from '@angular/core';
+import { Component, HostListener  } from '@angular/core';
 import { PersonService } from './person.service';
 import { ChatService } from './chat.service';
 import { Message } from './message';
@@ -15,9 +15,6 @@ export class AppComponent {
   constructor(public pService: PersonService, public cService: ChatService) { }
 
   public title: string = 'EasyChat';
-  
-  // Definition Variable nicknamehistory
-  nicknamehistory:string = '';
 
   // Definiton Variable message
   message = '';
@@ -38,7 +35,7 @@ export class AppComponent {
 
   // Methode, nimmt Event entgeben, wenn Message abgesendet wird in der Chat-bar-Component
   receiveMessage($event : string) {
-    
+
     // Fehlermeldung, wenn Nickname fehlt, wird Variable noUser auf true gesetzt
     if (!this.pService.nickname) {
       this.noUser = true
@@ -50,19 +47,14 @@ export class AppComponent {
     // Nickname wird der Nachricht voran gestellt und mit der Nachricht zusammengeführt
     this.message = $event;
     if (this.message) {
-      // showNickname wird auf true gesetzt, damit wird Nickname vor der Message angezeigt
-      let showNickname = true;
-      
-      this.nicknamehistory = this.pService.nickname;
 
-      //erstellt Objekt m
-      let m = new Message(this.message, this.nicknamehistory, new Date(), 'message');
+      let m = new Message(this.message, this.pService.nickname, new Date(), 'message', this.pService.userId);
 
       //Objekt m in addToHistory Methode hinein pushen
       this.cService.addToHistory(m).subscribe(
-      (response:Message) => {
-      console.log('REST servergaveback' + response);
-      })
+        (response:Message) => {
+          console.log('REST servergaveback' + response);
+        })
 
       //löscht erstes Objekt
       this.deleteFirstArray();
@@ -79,20 +71,32 @@ export class AppComponent {
 
     if (!this.pService.nickname) {
 
-      m = new Message("ist dem Chat beigetreten", $event, new Date(), 'newUser');
+      m = new Message(this.pService.nickname + "ist dem Chat beigetreten", $event, new Date(), 'newUser', this.pService.userId);
 
     }
     // wenn vorher bereits einen Nicknamen eingegeben wurde, wird Text "xy hat den Namen zu xy geändert" ausgegeben
     else {
-     
-      m = new Message(this.pService.nickname + " hat den Namen zu " + $event + " geändert.", $event, new Date(), 'changeUser');
+
+      m = new Message(this.pService.nickname + " hat den Namen zu " + $event + " geändert.", $event, new Date(), 'changeUser', this.pService.userId);
 
     }
 
-    //Objekt m in addToHistory Methode hinein pushen    
+    //Objekt m in addToHistory Methode hinein pushen
     this.cService.addToHistory(m).subscribe(
       (response:Message) => {
       console.log('REST servergaveback' + response);
       })
+  }
+
+  @HostListener('window:unload', ['$event'])
+  exitUser(event : string){
+    if (this.pService.nickname != ''){
+      let userId = this.pService.userId;
+      let m = new Message(this.pService.nickname + " ist heim gegangen ", this.pService.nickname, new Date(), 'exitUser', this.pService.userId);
+      this.cService.addToHistory(m).subscribe(
+        (response:Message) => {
+        console.log('REST servergaveback' + response);
+      })
+    }
   }
 }

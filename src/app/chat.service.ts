@@ -10,8 +10,6 @@ import { Message } from './message';
 
 export class ChatService {
 
-  // public actionUrl: string =URL von RestRep;
-
   constructor(private http:HttpClient) { }
 
   //gibt erstellte Message an Server weiter
@@ -19,11 +17,15 @@ export class ChatService {
     const options = {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
-    return this.http.post<Message>('https://chatnroll.herokuapp.com/api/history', message, options); 
+    return this.http.post<Message>('https://chatnroll.herokuapp.com/api/history', message, options);
+    // return this.http.post<Message>('http://localhost:3000/api/history', message, options);
   }
 
-  
+
   public getHistory(): Observable<Message[]> {
     return this.http.get<Message[]>('https://chatnroll.herokuapp.com/api/history');
+    // return this.http.get<Message[]>('http://localhost:3000/api/history');
   }
+
+
 }

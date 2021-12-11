@@ -60,7 +60,9 @@ export class LoginComponent {
     if (!this.inputError && this.nickname) {
       this.nicknameEvent.emit(this.nickname);
       this.pService.nickname = this.nickname;
+
       this.welcomeText = "Willkommen " + this.nickname +"!";
+
       this.nickname='';
     }
   }

@@ -17,7 +17,7 @@ export class ChatHistoryComponent {
   dateNow:Date = new Date;
 
 
-  constructor(public pService: PersonService, public cService: ChatService) { } 
+  constructor(public pService: PersonService, public cService: ChatService) { }
 
   @Input()  nickname!: string;
 
@@ -35,7 +35,8 @@ export class ChatHistoryComponent {
       this.chatHistory = [];
 
         for (let msg of response) {
-          this.chatHistory.push({message: msg.message, nickname: msg.nickname, timestamp: new Date(msg.timestamp), type: msg.type, showNickname: msg.showNickname});
+          // TODO: direkt msg verwenden <und kann mann nicht gleich die liste pushen statt for loop??)
+          this.chatHistory.push({message: msg.message, nickname: msg.nickname, timestamp: new Date(msg.timestamp), type: msg.type, showNickname: msg.showNickname, userId: msg.userId});
         }
       },
         (error: any) => {

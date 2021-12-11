@@ -3,8 +3,8 @@
         <!-- Liste mit aktiven Usern ausgeben -->
         <ul id="userList" >
             <!-- For-Schleife iteriert über activeUsers-Array und gibt einzelne User aus -->
-            <li class="users" *ngFor="let messages of activeUsers">
-                <b>{{messages.nickname}}</b>
+            <li class="users" *ngFor="let nickname of activeUsers">
+                <b>{{nickname}}</b>
             </li>
         </ul>
     </div>

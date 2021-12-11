@@ -46,17 +46,23 @@
 
 .timeStampMessage {
     font-size: 12px;
-    color: #F6E7D8; 
-} 
+    color: #F6E7D8;
+}
 
 .newusermessage {
     background-color: #ffffff;
     color: #DE7C78;
 }
 
+.otherInfoMessage {
+  background-color: #ffffff;
+  color: #DE7C78;
+  align-items: center;
+}
+
 .timeStampNewUser {
     font-size: 12px;
-    color: #DE7C78; 
+    color: #DE7C78;
 }
 
 /* Scrollbar-Design */
@@ -64,20 +70,20 @@
 ::-webkit-scrollbar {
     width: 10px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
     margin-top: 5px;
     background: #ffffff;
     border-radius: 5px;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #d6cfcf;
     border-radius: 5px;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #AA4942;
