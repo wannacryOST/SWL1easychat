@@ -31,14 +31,6 @@ export class AppComponent {
   // Definition noUser für Fehlermeldung, wenn Nickname fehlt
   noUser:boolean = false;
 
-
-  //Methode die alle Nachrichten löscht wenn das Array mehr als 20 Nachrichten enthält
-  deleteFirstArray() {
-    if (this.messageArray.length > 20) {
-      this.messageArray.shift();
-    }
-  }
-
   // Methode, nimmt Event entgeben, wenn Message abgesendet wird in der Chat-bar-Component
   receiveMessage($event : string) {
 
@@ -66,9 +58,6 @@ export class AppComponent {
       (response:Message) => {
       console.log('REST servergaveback' + response);
       })
-
-      //löscht erstes Objekt
-      this.deleteFirstArray();
       this.message = ''
     }
   }
